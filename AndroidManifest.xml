@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.alfaservice.soft.taxiclient"
+    android:versionCode="402"
+    android:versionName="0.1" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-sdk android:minSdkVersion="7" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <uses-library android:name="com.google.android.maps" />
+        <activity
+            android:name="com.alfaservice.soft.view.TaxiClientActivity"
+            android:label="@string/app_name" android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.alfaservice.soft.view.TaxiClientMainViewActivity" android:theme="@style/MyTheme"></activity>
+        <activity android:theme="@style/Theme.CustomDialog" android:name="com.alfaservice.soft.view.OptionActivity"></activity>
+        <activity android:name="com.alfaservice.soft.view.NuovaRichiestaActivity" android:theme="@style/Theme.CustomDialog"></activity>
+        <activity android:name="com.alfaservice.soft.view.MappaActivity" android:theme="@android:style/Theme.DeviceDefault.NoActionBar"></activity>
+        <activity android:name="com.alfaservice.soft.view.ProfiloActivity" android:theme="@android:style/Theme.DeviceDefault.NoActionBar"> </activity>
+        <activity android:theme="@android:style/Theme.DeviceDefault.NoActionBar" android:name=".AutocompletamentoActivity"></activity>
+        <activity android:theme="@android:style/Theme.DeviceDefault.Dialog.NoActionBar" android:name="com.alfaservice.soft.view.LoadingActivity"></activity> 
+        <service android:enabled="true" android:name="com.alfaservice.soft.service.OperazioniService" android:process=":remote" />
+        <service android:enabled="true" android:name="com.alfaservice.soft.service.ControllaRichiesteService" android:process=":remote" />
+    </application>
+	
+</manifest>
